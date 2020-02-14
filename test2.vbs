@@ -8,14 +8,14 @@ Sub ExempleMacroExcel()
   Dim ClasseurExcel 
 
   Set ApplicationExcel = CreateObject("Excel.Application") 
-  Set ClasseurExcel = ApplicationExcel.Workbooks.Open("P:\test.xlsm") 
+  Set ClasseurExcel = ApplicationExcel.Workbooks.Open(ApplicationExcel.GetOpenFilename) 
   
-  ApplicationExcel.Visible = True   'les actions seront visibles. Pour tout lancer en arriÃ¨re-plan, remplacer True par False
-  ApplicationExcel.Run "Macro1" 'va lancer la macro "MacroTest1"
+  ApplicationExcel.Visible = True   'les actions seront visibles. Pour tout lancer en arrière-plan, remplacer True par False
+  ApplicationExcel.Run "Decaler" 'va lancer la macro "Decaler"
   ApplicationExcel.DisplayAlerts = False
-  ApplicationExcel.Sheets("Feuil2").Delete
+  ApplicationExcel.Sheets("statSVP").Delete
   ApplicationExcel.DisplayAlerts = True
   Set ClasseurExcel = Nothing 
   Set ApplicationExcel = Nothing 
 
-End Sub
+End Sub 
